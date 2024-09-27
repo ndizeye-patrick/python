@@ -2,16 +2,15 @@
 
 import React, { useState } from "react";
 import "../../src/index.css";
-import user from "../../src/assets/people03.png";
 import owner from "../../src/assets/owner.png";
 import Land from "../../src/assets/icons/land.png";
 import family from "../../src/assets/icons/family.png";
-import justice from "../../src/assets/icons/justice.png";
 import police from "../../src/assets/icons/polic.png";
 import health from "../../src/assets/icons/health.png";
 import ai from "../../src/assets/robot.png";
 import { RightSquareOutlined } from "@ant-design/icons";
 import { LeftCircleOutlined } from "@ant-design/icons";
+import { RightCircleOutlined } from "@ant-design/icons";
 import { CloseCircleOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
@@ -19,6 +18,16 @@ import { Link } from "react-router-dom";
 
 export default function FastB() {
   const [open, setOpen] = useState(false);
+  // State to track alert visibility
+  const [showAlert, setShowAlert] = useState(false);
+
+  // Function to handle button click
+  const handleButtonClick = () => {
+    setShowAlert(true);
+
+    // Automatically hide the alert after 3 seconds (optional)
+    setTimeout(() => setShowAlert(false), 3000);
+  };
   return (
     <>
       <div className="flex md:cols-2 h-[44rem] bg-primary">
@@ -37,7 +46,8 @@ export default function FastB() {
                         Where Safety Meets Swift{" "}
                         <span className="text-secondary">Solutions.</span>
                       </h1>
-                      <CloseCircleOutlined className="text-2xl text-dimWhite"
+                      <CloseCircleOutlined
+                        className="text-2xl text-dimWhite"
                         onClick={() => setOpen((prevOpen) => !prevOpen)}
                       />
                     </div>
@@ -507,11 +517,14 @@ export default function FastB() {
             </div>
 
             {/* on small devices */}
-            <div className="ml-auto sm:hidden">
-              <LeftCircleOutlined
+            <div className="ml-auto">
+              <RightCircleOutlined
                 onClick={() => setOpen((prevOpen) => !prevOpen)}
-                className="text-2xl text-primaryhover:text-dimWhite hover:text-dimWhite"
+                className="text-2xl sm:hidden text-primaryhover:text-dimWhite hover:text-dimWhite"
               />
+              <Link to="/">
+                <LeftCircleOutlined className="text-2xl text-primary hover:text-dimWhite" />
+              </Link>
             </div>
           </div>
 
@@ -552,7 +565,13 @@ export default function FastB() {
                 placeholder="Message FastB "
               />
 
-              <RightSquareOutlined className="w-12 text-3xl text-dimWhite hover:text-secondary" />
+              <RightSquareOutlined onClick={handleButtonClick} className="w-12 text-3xl text-dimWhite hover:text-secondary" />
+              {/* Conditional rendering of the styled alert */}
+      {showAlert && (
+        <div className="fixed top-4 right-4 bg-secondary text-primary p-4 rounded-lg shadow-lg z-50">
+          <p>FastB AI is under development!</p>
+        </div>
+      )}
             </div>
           </div>
         </div>

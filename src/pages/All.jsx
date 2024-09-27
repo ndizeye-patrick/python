@@ -1,9 +1,9 @@
 import styles from "../style";
 import {
   Billing,
+  Billingb,
   Business,
   CardDeal,
-  Clients,
   CTA,
   Footer,
   Navbar,
@@ -33,8 +33,8 @@ const All = () => (
         <Business />
         <Billing />
         <CardDeal />
+        <Billingb />
         <Testimonials />
-        <Clients />
         <CTA />
         <Footer />
       </div>

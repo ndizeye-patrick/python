@@ -1,3 +1,5 @@
+/** @format */
+
 import airbnb from "./airbnb.png";
 import bill from "./bill.png";
 import binance from "./binance.png";
@@ -21,11 +23,16 @@ import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
 import twitter from "./twitter.svg";
 import people01 from "./people01.png";
-import people02 from "./people02.png";
-import people03 from "./people03.png";
+import people02 from "./people02.jpg";
+import people03 from "./people03.jpeg";
+import layer from "./layer.png";
+import data from "./data.png";
+import owner from "./owner.png";
 
 export {
+  owner,
   airbnb,
+  data,
   bill,
   binance,
   card,
@@ -50,4 +57,5 @@ export {
   people01,
   people02,
   people03,
+  layer,
 };
