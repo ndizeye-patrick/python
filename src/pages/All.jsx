@@ -1,7 +1,19 @@
-import styles from "./style";
-import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Testimonials, Hero } from "./components";
+import styles from "../style";
+import {
+  Billing,
+  Business,
+  CardDeal,
+  Clients,
+  CTA,
+  Footer,
+  Navbar,
+  Stats,
+  Testimonials,
+  Hero,
+} from "../components";
+import { Link } from "react-router-dom";
 
-const App = () => (
+const All = () => (
   <div className="bg-primary w-full overflow-hidden">
     <div className={`${styles.paddingX} ${styles.flexCenter}`}>
       <div className={` ${styles.boxWidth}`}>
@@ -30,4 +42,4 @@ const App = () => (
   </div>
 );
 
-export default App;
+export default All;
