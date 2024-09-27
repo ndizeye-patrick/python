@@ -139,7 +139,29 @@
   filter: blur(750px);
 }
 .page {
-  background-image: url(../src/assets/robot.png);
+  background-image: url(../src/assets/robotbg.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+}
+/* Custom scrollbar styles */
+.scrollbar-transparent::-webkit-scrollbar {
+    width: 12px;
+}
+
+.scrollbar-transparent::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.hover\:scrollbar-red:hover::-webkit-scrollbar-thumb {
+    background-color:  rgba(255, 255, 255, 0.7);
+}
+
+/* For Firefox */
+.scrollbar-transparent {
+    scrollbar-color: transparent transparent;
+}
+
+.hover\:scrollbar-red:hover {
+    scrollbar-color:  rgba(255, 255, 255, 0.7) transparent;
 }
